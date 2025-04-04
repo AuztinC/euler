@@ -1,0 +1,4 @@
+(defn group-frequencies [coll]
+      (frequencies coll))
+(group-frequencies [1 2 2 3 3 3])
+(group-frequencies [:a :b :a :a :c])
