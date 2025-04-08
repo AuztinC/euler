@@ -7,3 +7,4 @@ out
 pom.xml
 target
 
+*.clj-kondo
