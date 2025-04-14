@@ -36,11 +36,29 @@
   (let [subvec-col (subvec-str-coll coll)]
     (every? true? (map #(= (first subvec-col) %) subvec-col))))
 
-(defn recur-match-check [num-col]
-  (loop [n-col num-col max-pal 0]
-    (if (and (match-check n-col) (< max-pal (reduce * n-col)))
-      [n-col (reduce * n-col)]
-    (recur [(- (first n-col) 1) (last n-col)] max-pal))))
+(defn largest-palindrome [num-col]
+  (loop [i (first num-col)
+         max-product 0
+         best-pair []]
+    (if (< i 100)
+      [best-pair max-product]
+      (let [[best-product best-pair-inner]
+            (loop [j i
+                   local-max max-product
+                   local-pair best-pair]
+              (if (< j 100)
+                [local-max local-pair]
+                (let [prod (* i j) match (match-check [i j])]
+                  (if (and match (> prod local-max))
+                    (recur (dec j) prod [i j])
+                    (recur (dec j) local-max local-pair)))))]
+        (recur (dec i) best-product best-pair-inner)))))
 
-(defn euler-4 [n]
-  n)
+#_(defn recur-match-check [num-col]
+  (loop [n-col num-col idx true]
+    (if (match-check n-col)
+      [n-col (reduce * n-col)]
+    (if (true? idx)
+       (recur [(- (first n-col) 1) (last n-col)] false)
+       (recur [(first n-col) (- (last n-col) 1)] true) ))))
+

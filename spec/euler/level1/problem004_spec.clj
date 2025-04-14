@@ -37,20 +37,19 @@
       (should= true (match-check [91 99])))
     )
 
-  (context "recursively check for match"
+  #_(context "recursively check for match"
     (it "highest 2 digit"
       (should= [[91 99] 9009] (recur-match-check [99 99])))
     (it "222"
       (should= [[207 222] 45954] (recur-match-check [222 222])))
-    (it "333"
-      (should=  [[273 333] 90909]  (recur-match-check [333 333])))
-    (it "999"
-      (should=  [[91 999] 90909]   (recur-match-check [999 999])))
-    (it "888"
-      (should=  [[737 888] 654456]   (recur-match-check [888 888])))
-
+    ;(it "333"
+    ;  (should=  [[273 333] 90909]  (recur-match-check [333 333])))
+    (it "777"
+      (should= [[538 539] 289982] (recur-match-check [777 777])))
     )
 
+  (it "999"
+    (should= [[993 913] 906609] (largest-palindrome [999 999])))
   )
 
 (run-specs)
