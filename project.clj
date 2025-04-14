@@ -4,6 +4,6 @@
                  [org.clojure/math.combinatorics "0.1.6"]]
   :profiles {:dev {:dependencies [[speclj "3.9.0"]]}}
   :plugins [[speclj "3.9.0"]]
-  :test-paths ["spec/"]
+  :test-paths ["spec/", "src"]
   :aliases {"euler" ["run" "-m" "euler.generator"]}
   )
