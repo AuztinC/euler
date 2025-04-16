@@ -26,6 +26,7 @@
        last
        last
        )
+  )
 
   #_(loop [i num
          max-product 0
@@ -42,7 +43,7 @@
                   (if (and match (> prod local-max))
                     (recur (dec j) prod [i j])
                     (recur (dec j) local-max local-pair)))))]
-        (recur (dec i) best-product best-pair-inner)))))
+        (recur (dec i) best-product best-pair-inner))))
 #_(loop [i num
          max-product 0
          best-pair []]
