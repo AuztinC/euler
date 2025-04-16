@@ -5,7 +5,7 @@
 
 ; https://projecteuler.net/problem=5
 
-(focus-describe "Euler Problem #5"
+(describe "Euler Problem #5"
 
                 (context "mod over collection up to 20"
                   (it "2 gives 'false"
