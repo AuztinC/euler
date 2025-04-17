@@ -5,7 +5,7 @@
 
 ; https://projecteuler.net/problem=6
 
-(focus-describe "Euler Problem #6"
+(describe "Euler Problem #6"
   (context "Sum of square"
     (it "3 gives 36?"
       (should= 36 (square-of-sum 3)))
