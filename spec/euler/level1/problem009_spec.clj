@@ -5,7 +5,7 @@
 
 ; https://projecteuler.net/problem=9
 
-(focus-describe "Euler Problem #9"
+(describe "Euler Problem #9"
 
   (context "pythagorean-triplet?"
     (it "checking for pythagorean-triplet"

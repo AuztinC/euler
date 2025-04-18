@@ -18,5 +18,3 @@
         (recur (+ 2 depth) prime-col)
         ))))
 
-(defn euler-7 [n]
-  )
