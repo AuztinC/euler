@@ -5,7 +5,7 @@
 
 ; https://projecteuler.net/problem=8
 
-(focus-describe "Euler Problem #8"
+(describe "Euler Problem #8"
 
   #_(context "get product of first 13"
     (it "first 13 from seq"
