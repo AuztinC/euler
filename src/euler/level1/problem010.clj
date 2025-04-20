@@ -1,10 +1,6 @@
 (ns euler.level1.problem010)
 
 
-(defn- prx [x]
-  (prn "x: " x)
-  x)
-
 (defn prime? [num prime-coll]
   (not-any? #(zero? (mod num %)) (take-while #(<= % (Math/sqrt num)) prime-coll)))
 

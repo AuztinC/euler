@@ -5,7 +5,7 @@
 
 ; https://projecteuler.net/problem=10
 
-(focus-describe "Euler Problem #10"
+(describe "Euler Problem #10"
 
   #_(context "is it prime?"
     (it "2 true"
