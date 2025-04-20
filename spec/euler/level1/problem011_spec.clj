@@ -5,7 +5,7 @@
 
 ; https://projecteuler.net/problem=11
 
-(focus-describe "Euler Problem #11"
+(describe "Euler Problem #11"
 
   #_(context "build 20x20 grid"
     (it "turns string into grid with 20 length sub vectors"
