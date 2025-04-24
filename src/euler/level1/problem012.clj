@@ -18,21 +18,19 @@
 (defn- prx [x]
   (prn "x: " x)
   x)
-;(defn prime-factors [n]
-;  (loop [n n, d 2, factors {}]
-;    (cond
-;      (> (* d d) n) (if (> n 1) (update factors n (fnil inc 0)) factors)
-;      (zero? (mod n d)) (recur (/ n d) d (update factors d (fnil inc 0)))
-;      :else (recur n (inc d) factors))))
-;
-;(defn count-divisors [n]
-;  (->> (prime-factors n)
-;    (vals)
-;    (map inc)
-;    (reduce *)))
+
+(defn prime-factors [n]
+  (loop [n n, d 2, factors {}]
+    (cond
+      (> (* d d) n) (if (> n 1) (update factors n (fnil inc 0)) factors)
+      (zero? (mod n d)) (recur (/ n d) d (update factors d (fnil inc 0)))
+      :else (recur n (inc d) factors))))
 
 (defn count-divisors [n]
-  (count (filter #(zero? (mod n %)) (map inc (range n)))))
+  (reduce * (map inc (vals (prime-factors n)))))
+
+;(defn count-divisors [n]
+;  (count (filter #(zero? (mod n %)) (map inc (range n)))))
 
 (def triangles (map #(reduce + (range %)) (iterate inc 1)))
 
