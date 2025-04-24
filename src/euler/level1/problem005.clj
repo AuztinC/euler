@@ -9,17 +9,17 @@
     THOUGHTS
     range from 1 - 20
     start from 2520 counting up
-    if (ever? true? (mod bigint (every? range 1 - 20))) ; store in coll ex:[true true false true]
+    if (ever? true? (mod bigint (every? range 1 - 20)))     ; store in coll ex:[true true false true]
     the first 'false' stop modding the coll
-      )
+    )
 
-(defn mod-over-coll [test-num]
-    (every? true? (map #(zero? (mod test-num %)) (range 1 (inc 20)))))
+(defn divisible-by-all? [coll dividend]
+  (every? zero? (map #(mod dividend %) coll)))
 
 
-(defn divisible-by-range? []
-    (loop [smallest-divisor 10]
-        (if (true? (mod-over-coll smallest-divisor))
-            smallest-divisor
-            (recur (+ smallest-divisor 2)))))
+(defn lcm-to [n]
+  (loop [smallest-divisor 10]
+    (if (true? (divisible-by-all? (range 1 n) smallest-divisor))
+      smallest-divisor
+      (recur (+ smallest-divisor 2)))))
 

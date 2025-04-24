@@ -7,16 +7,27 @@
 
 (describe "Euler Problem #7"
 
-  #_(context "can we get primes?"
-    (it "first prime number - 2"
-      (should= true (prime? 2)))
-    (it "5"
-      (should= true (prime? 5)))
-    (it "7"
-      (should= true (prime? 7)))
-    (it "8"
-      (should= false (prime? 8)))
+  (it "asserts if prime"
+    (should (prime? 2))
+    (should (prime? 3))
+    (should-not (prime? 4))
+    (should (prime? 5))
+    (should-not (prime? 6))
+    (should (prime? 7))
+    (should-not (prime? 8))
+    (should-not (prime? 9))
+    (should-not (prime? 10))
+    (should (prime? 6899))
+    (should (prime? 33391))
     )
+
+  (it "finds nth prime"
+    (should= 2 (nth primes 0))
+    (should= 3 (nth primes 1))
+    (should= 5 (nth primes 2))
+    (should= 7 (nth primes 3))
+    (should= 13 (nth primes 5))
+    (should= 104743 (nth primes 10000)))
   #_(context "check prime-upto"
     (it "up to 10"
       (should= '(2 3 5 7) (find-primes-upto 10)))

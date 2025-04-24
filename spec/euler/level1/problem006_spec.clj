@@ -18,12 +18,12 @@
     (it "100 gives value to be subtracted from square-of-sum"
       (should= 338350 (sum-of-square 100)))
     )
-                (context "Difference between sum-of-square and square-of-sum"
-                  (it "3 gives 22"
-                    (should= 22 (calc-difference 3)))
-                  (it "100 gives ?"
-                    (should= 25164150 (calc-difference 100)))
-                  )
+  (context "Difference between sum-of-square and square-of-sum"
+    (it "3 gives 22"
+      (should= 22 (calc-difference 3)))
+    (it "100 gives ?"
+      (should= 25164150 (calc-difference 100)))
+    )
   )
 
 (run-specs)

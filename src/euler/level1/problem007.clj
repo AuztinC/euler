@@ -2,9 +2,15 @@
 
 #_(10,001 st prime number - only test odds
     if count of collection of primes == 10,001)
-
-(defn prime? [depth prime-col]
+(defn ->inspect [x]
+  (prn x)
+  x)
+#_(defn prime? [depth prime-col]
   (every? false? (map #(zero? (mod depth %)) prime-col)))
+(defn prime? [n]
+  (every? false? (map #(zero? (mod n %)) (range 2 n))))
+
+(def primes (filter prime? (iterate inc 2)))
 
 #_(defn find-primes [n]
   (filter #(if (prime? %) %) (map inc (range 1 n))))

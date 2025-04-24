@@ -10,11 +10,11 @@
   (if (= n 2)
     [2]
     (->> (range 2 (inc (Math/sqrt n)))
-         (filter #(zero? (mod n %)))
-         (mapcat #(let [pair (/ n %)]
-                    (if (= % pair)
-                      [%]
-                      [% pair]))))))
+      (filter #(zero? (mod n %)))
+      (mapcat #(let [pair (/ n %)]
+                 (if (= % pair)
+                   [%]
+                   [% pair]))))))
 
 ; this is my function that wouldn't pass the base cases
 ;(defn factors [n]
